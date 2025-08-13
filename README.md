@@ -19,12 +19,12 @@ This Excel model:
 
 ## Project Structure
 
-- Assumptions Tab – Key deal inputs (purchase price, leverage, growth rates, etc.).
-- Ops (Operations) Tab – Revenue, EBITDA, Capex, Working Capital, Free Cash Flow calculations.
-- Sources & Uses Tab – Purchase price funding breakdown between debt and equity.
-- Debt Schedule Tab – Interest, amortization, cash sweeps, and ending debt balances.
-- Returns Summary Tab – IRR, MOIC, and exit calculations.
-- Sensitivity Tab – IRR sensitivity to exit multiples and leverage levels.
+- **Assumptions Tab** – Key deal inputs (purchase price, leverage, growth rates, etc.).
+- **Ops (Operations) Tab** – Revenue, EBITDA, Capex, Working Capital, Free Cash Flow calculations.
+- **Sources & Uses Tab** – Purchase price funding breakdown between debt and equity.
+- **Debt Schedule Tab** – Interest, amortization, cash sweeps, and ending debt balances.
+- **Returns Summary Tab** – IRR, MOIC, and exit calculations.
+- **Sensitivity Tab** – IRR sensitivity to exit multiples and leverage levels.
 
 ---
 
@@ -32,17 +32,18 @@ This Excel model:
 
 ### 1. Assumptions
 - Entry EBITDA (Y0): 100
-- EBITDA Growth: 8% per year
+- EBITDA Growth (annual): 8%
 - EBITDA Margin: 30%
 - Capex % of Revenue: 3%
 - ΔNWC % of ΔRevenue: 2%
 - D&A % of Revenue: 2%
-- Tax Rate: 25%
-- Entry/Exit EV / EBITDA Multiple: 12x
-- Debt % of Entry EV: 60%
-- Interest Rate: 8%
-- Mandatory Amortization: 5% of original debt/year
-- Fees: 2% of EV
+- Tax Rate (cash): 25%
+- Entry EV / EBITDA Multiple: 12x
+- Exit EV / EBITDA Multiple: 12x
+- Debt % of Entry EV: 50%
+- Interest Rate (Term Loan): 8%
+- Mandatory Amortization (% of original debt / yr): 5%
+- Fees % of EV (transaction + financing): 2%
 - Exit Year: 5
 
 ---
@@ -56,9 +57,9 @@ This Excel model:
 ---
 
 ### 3. Sources & Uses
-- Uses: Purchase EV + fees.
-- Sources: Debt financing + sponsor equity.
-- Debt covers 60% of EV; equity funds the remainder.
+- **Uses:** Purchase EV + fees.
+- **Sources:** Debt financing + sponsor equity.
+- Debt covers 50% of EV; equity funds the remainder.
 
 ---
 
@@ -80,24 +81,29 @@ This Excel model:
 
 ### 6. Sensitivity Analysis
 Two tables included:
-1. Exit Multiple vs IRR (Debt % fixed at 60%)
+1. Exit Multiple vs IRR (Debt % fixed at 50%)
 2. Leverage vs IRR (Exit Multiple fixed at 12x)
 
 ---
 
 ## Base Case Results
 
-- Exit Multiple: 12x
-- Debt % of EV: 60%
-- MOIC: 3.24x
-- IRR: 27%
+| Metric                | Value     | Notes |
+|-----------------------|-----------|-------|
+| **Exit EBITDA**       | 146.93    | Year 5 EBITDA |
+| **Exit EV**           | 1,763.19  | Exit EBITDA × Exit Multiple |
+| **Net Debt at Exit**  | 282.07    | From Debt Schedule |
+| **Equity Value at Exit** | 1,481.12 | Exit EV – Net Debt |
+| **Equity CFs**        |           | Y0 = -624.00, Y1–Y4 = 0, Y5 = 1,481.12 |
+| **MOIC**              | 2.37x     | Equity Value at Exit ÷ Initial Equity |
+| **IRR**               | 19%       | IRR of equity cash flows |
 
 ---
 
 ## How to Use
 1. Open the Excel file.
-2. Adjust Assumptions tab to reflect different deal structures.
-3. Review impact in Returns Summary and Sensitivity tabs.
+2. Adjust **Assumptions** tab to reflect different deal structures.
+3. Review impact in **Returns Summary** and **Sensitivity** tabs.
 
 ---
 
